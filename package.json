@@ -1,0 +1,17 @@
+{
+  "name": "microservices-based-event-management-platform",
+  "version": "1.0.0",
+  "description": "Root workspace runner for the Event Management Platform",
+  "scripts": {
+    "install:all": "npm install --prefix backend/auth-service && npm install --prefix backend/event-service && npm install --prefix backend/registration-service && npm install --prefix backend/notification-service && npm install --prefix backend/api-gateway && npm install --prefix backend/analytics-service && npm install --prefix frontend",
+    "dev:auth": "npm run dev --prefix backend/auth-service",
+    "dev:event": "npm run dev --prefix backend/event-service",
+    "dev:registration": "npm run dev --prefix backend/registration-service",
+    "dev:notification": "npm run dev --prefix backend/notification-service",
+    "dev:gateway": "npm run dev --prefix backend/api-gateway",
+    "dev:analytics": "npm run dev --prefix backend/analytics-service",
+    "dev:backend": "npx concurrently --names \"auth,event,reg,notif,gate,analyt\" --prefix-colors \"blue,green,yellow,cyan,gray,white\" \"npm run dev --prefix backend/auth-service\" \"npm run dev --prefix backend/event-service\" \"npm run dev --prefix backend/registration-service\" \"npm run dev --prefix backend/notification-service\" \"npm run dev --prefix backend/api-gateway\" \"npm run dev --prefix backend/analytics-service\"",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev": "npx concurrently --names \"auth,event,reg,notif,gate,analyt,front\" --prefix-colors \"blue,green,yellow,cyan,gray,white,magenta\" \"npm run dev --prefix backend/auth-service\" \"npm run dev --prefix backend/event-service\" \"npm run dev --prefix backend/registration-service\" \"npm run dev --prefix backend/notification-service\" \"npm run dev --prefix backend/api-gateway\" \"npm run dev --prefix backend/analytics-service\" \"npm run dev --prefix frontend\""
+  }
+}
